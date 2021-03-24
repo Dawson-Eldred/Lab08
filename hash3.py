@@ -12,7 +12,7 @@ def update(hashlist):
 
     # f = open("textfile.txt", "a")
     buffer = 65536
-    ignore = set(['dev', 'proc', 'run', 'sys', 'tmp', 'var/lib', 'var/run', 'usr/src', 'usr/lib'])
+    ignore = set(['dev', 'proc', 'run', 'sys', 'tmp', 'var/lib', 'var/run', 'usr/src', 'usr/lib', 'usr/share'])
     sha2 = hashlib.sha256()
 
 # Implementing step 4, running back through and re-hashing every file to compare hashes. Then printing changes
@@ -88,7 +88,7 @@ def main():
 
 # Code below puts the program to sleep to allow for any file changes - mostly testing purposes
     print("Program will now sleep to allow changes to files to be made")
-    time.sleep(30)
+    time.sleep(10)
     update(hashlist)
 
 main()
